@@ -47,4 +47,7 @@ WORKDIR /opt/ComfyUI
 ENTRYPOINT /init.sh
 
 RUN python3.11 -m pip cache purge
+
+VOLUME /opt/ComfyUI
+
 RUN apt autoremove
