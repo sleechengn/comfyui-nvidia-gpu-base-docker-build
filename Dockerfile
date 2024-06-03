@@ -44,10 +44,13 @@ RUN chmod +x /install.sh
 
 WORKDIR /opt/ComfyUI
 
-ENTRYPOINT /init.sh
+ENTRYPOINT ["/init.sh"]
+CMD []
 
 RUN python3.11 -m pip cache purge
 
 VOLUME /opt/ComfyUI
+VOLUME /opt/ComfyUI/models
+VOLUME /opt/ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts
 
 RUN apt autoremove
